@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -38,20 +38,17 @@ namespace Xqemu_Frontend
                 startInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
                 // Note: This isn't really the right way to do this... -Voxel
-                if (checkBox.IsChecked == true)
+                // Note2: This is the way to do it. (shoutouts to JayRoxFox and xbox7887!) -DarkGabbz
+
                 {
-                    startInfo.Arguments = "-cpu pentium3 -machine xbox,bootrom=" + textBox1.Text +
-                        " -m 128 -drive file=" + textBox3.Text + ",index=0,media=disk,locked=on -drive file=" + 
-                        textBox2.Text + ",index=1,media=cdrom -bios " + textBox.Text +
-                        " -usb -device usb-hub,bus=usb-bus.0,port=3 -device usb-xbox-gamepad,bus=usb-bus.0,port=3.2";
-                } else
-                {
-                    startInfo.Arguments = "-cpu pentium3 -machine xbox,short_animation,bootrom=" + textBox1.Text +
-                        " -m 128 -drive file=" + textBox3.Text + ",index=0,media=disk,locked=on -drive file=" +
-                        textBox2.Text + ",index=1,media=cdrom -bios " + textBox.Text +
-                        " -usb -device usb-hub,bus=usb-bus.0,port=3 -device usb-xbox-gamepad,bus=usb-bus.0,port=3.2";
-                }
+                    startInfo.Arguments = "-cpu pentium3 -machine xbox," + ((bool)checkBox.IsChecked ? "" : "short_animation,") + "bootrom=" + textBox1.Text +
+                          " -m " + ((bool)RamSlct.IsChecked ? "128" : "64") + " -drive file=" + textBox3.Text + ",index=0,media=disk,locked=on -drive file=" +
+                          textBox2.Text + ",index=1,media=cdrom -bios " + textBox.Text +
+                          " -usb -device usb-hub,bus=usb-bus.0,port=3 -device usb-xbox-gamepad,bus=usb-bus.0,port=3.2";
                 
+                }
+
+              
                 try
                 {
                     using (Process exeProcess = Process.Start(startInfo))
@@ -181,5 +178,13 @@ namespace Xqemu_Frontend
         {
 
         }
+
+        private void RamSlct_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+       
     }
 }
