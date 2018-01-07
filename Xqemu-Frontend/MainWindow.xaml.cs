@@ -18,6 +18,10 @@ namespace Xqemu_Frontend {
                     checkBox.IsChecked = true;
                 else if (readlines[4] == "false")
                     checkBox.IsChecked = false;
+                if (readlines[5] == "true")
+                    RamSlct.IsChecked = true;
+                else if (readlines[5] == "false")
+                    RamSlct.IsChecked = false;
             }
             catch { }
         }
@@ -114,13 +118,19 @@ namespace Xqemu_Frontend {
             }
         }
 
-        string tickBool;
+        string BootTickBool, RamTickBool;
         private void SaveCfg_Click(object sender, RoutedEventArgs e) {
+            // Store Bootanim checkbox bool as a string
             if (checkBox.IsChecked == true)
-                tickBool = "true";
+                BootTickBool = "true";
             else if (checkBox.IsChecked == false)
-                tickBool = "false";
-            string[] lines = { textBox.Text, textBox1.Text, textBox2.Text, textBox3.Text, tickBool };
+                BootTickBool = "false";
+            // Store RAM selection checkbox bool as a string
+            if (RamSlct.IsChecked == true)
+                RamTickBool = "true";
+            else if (RamSlct.IsChecked == false)
+                RamTickBool = "false";
+            string[] lines = { textBox.Text, textBox1.Text, textBox2.Text, textBox3.Text, BootTickBool, RamTickBool };
             File.WriteAllLines("frontend.cfg", lines);
             System.Windows.MessageBox.Show("Config saved to frontend.cfg!");
         }

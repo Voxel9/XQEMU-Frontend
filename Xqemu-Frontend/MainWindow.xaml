@@ -16,15 +16,14 @@
         <Label x:Name="label2" Content="MCPX ROM:" HorizontalAlignment="Left" Height="23" Margin="7,81,0,0" VerticalAlignment="Top" Width="77"/>
         <Button x:Name="button2" Content="Browse" HorizontalAlignment="Left" Height="19" Margin="356,103,0,0" VerticalAlignment="Top" Width="59" Click="button2_Click" ToolTip="Select the MCPX ROM"/>
         <Label x:Name="label3" Content="Xbox ISO:" HorizontalAlignment="Left" Height="41" Margin="7,120,0,0" VerticalAlignment="Top" Width="77"/>
-        <CheckBox x:Name="checkBox" Content="Show Full Boot Animation" HorizontalAlignment="Left" Height="18" Margin="10,213,0,0" VerticalAlignment="Top" Width="159" Checked="checkBox_Checked"/>
+        <CheckBox x:Name="checkBox" Content="Show Full Boot Animation" HorizontalAlignment="Left" Height="18" Margin="10,213,0,0" VerticalAlignment="Top" Width="159" Checked="checkBox_Checked" ToolTip="Displays the full Xbox flubber animation sequence."/>
         <Label x:Name="label4" Content="Xbox Harddisk Image:" HorizontalAlignment="Left" Height="41" Margin="7,160,0,0" VerticalAlignment="Top" Width="130"/>
         <Button x:Name="button3" Content="Browse" HorizontalAlignment="Left" Height="19" Margin="356,142,0,0" VerticalAlignment="Top" Width="59" Click="button3_Click" ToolTip="Select an Xbox ISO"/>
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="19" Margin="10,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" TextChanged="textBox2_TextChanged"/>
         <Button x:Name="button4" Content="Browse" HorizontalAlignment="Left" Height="18" Margin="356,183,0,0" VerticalAlignment="Top" Width="59" Click="button4_Click" ToolTip="Select an Xbox Harddisk"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="18" Margin="10,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" TextChanged="textBox3_TextChanged"/>
         <Button x:Name="SaveCfg" Content="Save Config" HorizontalAlignment="Left" Height="34" Margin="429,46,0,0" VerticalAlignment="Top" Width="79" Click="SaveCfg_Click"/>
-        <Label x:Name="RamSlctLabel" Content="128MB RAM" HorizontalAlignment="Left" Height="24" Margin="212,207,0,0" VerticalAlignment="Top" Width="82" RenderTransformOrigin="1.776,1.641"/>
-        <CheckBox x:Name="RamSlct" HorizontalAlignment="Right" Margin="0,213,299,0" VerticalAlignment="Top" Width="23" Checked="RamSlct_Checked" RenderTransformOrigin="0.488,4.045" Height="19" ToolTip="128mb is needed for debug executables">
+        <CheckBox x:Name="RamSlct" HorizontalAlignment="Right" Margin="0,213,233.4,0" VerticalAlignment="Top" Width="89" Checked="RamSlct_Checked" RenderTransformOrigin="0.488,4.045" Height="19" ToolTip="Sets 128MB RAM for the emulator; leaving blank will default to 64MB." Content="128MB RAM">
 
             <CheckBox.RenderTransform>
                 <TransformGroup>
