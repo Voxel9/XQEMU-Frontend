@@ -1,3 +1,5 @@
+# Note: I am no longer maintaining this frontend. For an up-to-date version which works with the latest XQEMU, see xqemu-manager -> https://github.com/xqemu/xqemu-manager
+
 # XQEMU Frontend
 This is a small Windows utility coded in C# which helps ease the process of launching Xbox ISOs/Dashboards through XQEMU. A friend requested this on Discord, so I decided to give it a shot.
 
